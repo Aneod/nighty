@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/nighty/static/css/main.d1c6c178.css",
-    "main.js": "/nighty/static/js/main.ae11b80e.js",
+    "main.css": "/nighty/static/css/main.0485e64d.css",
+    "main.js": "/nighty/static/js/main.2d2af89b.js",
     "static/js/787.fe94f433.chunk.js": "/nighty/static/js/787.fe94f433.chunk.js",
     "static/media/delete.png": "/nighty/static/media/delete.4ce3c9203648e1e07566.png",
     "index.html": "/nighty/index.html",
-    "main.d1c6c178.css.map": "/nighty/static/css/main.d1c6c178.css.map",
-    "main.ae11b80e.js.map": "/nighty/static/js/main.ae11b80e.js.map",
+    "main.0485e64d.css.map": "/nighty/static/css/main.0485e64d.css.map",
+    "main.2d2af89b.js.map": "/nighty/static/js/main.2d2af89b.js.map",
     "787.fe94f433.chunk.js.map": "/nighty/static/js/787.fe94f433.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d1c6c178.css",
-    "static/js/main.ae11b80e.js"
+    "static/css/main.0485e64d.css",
+    "static/js/main.2d2af89b.js"
   ]
 }
