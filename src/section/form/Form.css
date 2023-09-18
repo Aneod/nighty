@@ -1,0 +1,119 @@
+.Form{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 10;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Input{
+    width: 300px;
+    padding: 50px;
+    height: max-content;
+    background-color: rgb(232, 232, 232);
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.Input .hr{
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    margin-top: 15px;
+}
+
+.Input h1{
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.Input input, textarea{
+    border: black solid 1px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 2px;
+}
+
+.colorPanel{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.colorCircleChoice{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.colorSelector{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgb(232, 232, 232);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.littleColorSelector{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+button{
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 50%;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.stepTime{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+}
+
+.inputTime{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    gap: 5px;
+}
+
+.inputTime p{
+    margin: 0;
+}
+
+.inputTime input{
+    margin: 0 5px;
+    padding: 2px;
+    width: 80px;
+    height: 20px;
+    border: none;
+    border-radius: 0;
+}

@@ -1,10 +1,11 @@
 .App{
     width: 90vw;
-    height: calc(100vh - 10vw);
+    min-height: calc(100vh - 10vw - 50px);
     background-color: rgb(227, 227, 227);
     padding: 5vw;
 
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 5vw;
 }
