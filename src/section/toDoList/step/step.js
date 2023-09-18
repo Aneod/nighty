@@ -1,5 +1,6 @@
 import React from 'react'
 import Pen from './pen.png'
+import Cross from './cross.png'
 import './step.css'
 
 class Step extends React.Component {
@@ -13,6 +14,7 @@ class Step extends React.Component {
                         hour = {this.props.hour + ' - ' + this.props.name}
                         color = {this.props.color}
                         onClick = {this.props.onClick}
+                        delete = {this.props.delete}
                     />
 
                     {makeLineBreak(this.props.text).map(textPart => {
@@ -38,6 +40,7 @@ class Step extends React.Component {
                     hour = {this.props.hour + ' - ' + this.props.name}
                     color = {this.props.color}
                     onClick = {this.props.onClick}
+                    delete = {this.props.delete}
                 />
                 <div className='pointRail' style={{borderColor: this.props.color}}></div>
             </div>
@@ -71,6 +74,16 @@ class CheckPoint extends React.Component {
                         cursor: 'pointer'
                     }}
                     onClick={this.props.onClick}
+                />
+                <img
+                    src={Cross}
+                    alt="Remove"
+                    style={{
+                        height: '50%',
+                        padding: '5px',
+                        cursor: 'pointer'
+                    }}
+                    onClick={this.props.delete}
                 />
             </div>
         )

@@ -31,12 +31,12 @@ const originalNumbers = [parseInt(originalEndTimeTask.slice(0, 2)), parseInt(ori
 let newFollowingSteps = []
 if(replaceMode === 'Replace all'){
     newFollowingSteps = arrayOfFollowingSteps.map(step => 
-    ({
-        name: step.name,
-        text: step.text,
-        color: step.color,
-        hour: StringTimeGapper(step.hour, timeGap(startTime, originalNumbers)),
-    })
+        ({
+            name: step.name,
+            text: step.text,
+            color: step.color,
+            hour: StringTimeGapper(step.hour, timeGap(startTime, originalNumbers)),
+        })
     )
 }
 
@@ -76,4 +76,20 @@ const zeroHours = hours < 10 ? '0' + hours : hours
 const zeroMinutes = minutes < 10 ? '0' + minutes : minutes
 
 return zeroHours + ' : ' + zeroMinutes
+}
+
+export const stepDeleted = (deletedIndex, arrayOfAllSteps) => {
+    let newArray = []
+    const timeOfDeletedStep = arrayOfAllSteps[deletedIndex].hour
+    arrayOfAllSteps.map((step, stepIndex) => {
+        if(stepIndex === deletedIndex + 1) newArray.push({
+            name: step.name,
+            text: step.text,
+            color: step.color,
+            hour: timeOfDeletedStep,
+        })
+
+        else if(stepIndex !== deletedIndex) newArray.push(step)
+    })
+    return newArray
 }

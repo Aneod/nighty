@@ -34,6 +34,7 @@ class ToDoList extends React.Component {
                             name = {step.name}
                             text = {step.text}
                             onClick = {() => this.props.onClick(index)}
+                            delete = {() => this.props.delete(index)}
                         />
                     )
                 })}

@@ -5,7 +5,7 @@ import Header from './section/header/Header';
 import ToDoList from './section/toDoList/ToDoList';
 import Form from './section/form/Form';
 import Buttons from './section/Buttons/Buttons';
-import { timeGap, StringTimeGapper, replaceTime, addZeroForDate } from './functions';
+import { timeGap, StringTimeGapper, replaceTime, addZeroForDate, stepDeleted } from './functions';
 
 function App() {
 
@@ -37,6 +37,15 @@ function App() {
           onClick = {(index) => {
             setWhoModify(index)
             setFormWriting(!formWriting)
+          }}
+          delete = {(index) => {
+
+            if(index == arrayOfAllSteps.length - 1){
+              setCurrentDate([parseInt(arrayOfAllSteps[index].hour.slice(0, 2)), parseInt(arrayOfAllSteps[index].hour.slice(5))])
+            }
+
+            const newArray = stepDeleted(index, arrayOfAllSteps)
+            setArrayOfAllSteps(newArray)
           }}
         />
         
