@@ -81,7 +81,7 @@ return zeroHours + ' : ' + zeroMinutes
 export const stepDeleted = (deletedIndex, arrayOfAllSteps) => {
     let newArray = []
     const timeOfDeletedStep = arrayOfAllSteps[deletedIndex].hour
-    arrayOfAllSteps.map((step, stepIndex) => {
+    arrayOfAllSteps.forEach((step, stepIndex) => {
         if(stepIndex === deletedIndex + 1) newArray.push({
             name: step.name,
             text: step.text,
@@ -90,6 +90,26 @@ export const stepDeleted = (deletedIndex, arrayOfAllSteps) => {
         })
 
         else if(stepIndex !== deletedIndex) newArray.push(step)
+    })
+    return newArray
+}
+
+export const stepAdd = (addedIndex, arrayOfAllSteps) => {
+    let newArray = []
+    arrayOfAllSteps.forEach((step, stepIndex) => {
+        newArray.push({
+            name: step.name,
+            text: step.text,
+            color: step.color,
+            hour: step.hour,
+        })
+
+        if(stepIndex === addedIndex) newArray.push({
+            name: step.name,
+            text: step.text,
+            color: step.color,
+            hour: step.hour,
+        })
     })
     return newArray
 }

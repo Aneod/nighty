@@ -5,7 +5,7 @@ import Header from './section/header/Header';
 import ToDoList from './section/toDoList/ToDoList';
 import Form from './section/form/Form';
 import Buttons from './section/Buttons/Buttons';
-import { timeGap, StringTimeGapper, replaceTime, addZeroForDate, stepDeleted } from './functions';
+import { timeGap, StringTimeGapper, replaceTime, addZeroForDate, stepDeleted, stepAdd } from './functions';
 
 function App() {
 
@@ -39,12 +39,15 @@ function App() {
             setFormWriting(!formWriting)
           }}
           delete = {(index) => {
-
-            if(index == arrayOfAllSteps.length - 1){
+            if(index === arrayOfAllSteps.length - 1){
               setCurrentDate([parseInt(arrayOfAllSteps[index].hour.slice(0, 2)), parseInt(arrayOfAllSteps[index].hour.slice(5))])
             }
 
             const newArray = stepDeleted(index, arrayOfAllSteps)
+            setArrayOfAllSteps(newArray)
+          }}
+          add = {(index) => {
+            const newArray = stepAdd(index, arrayOfAllSteps)
             setArrayOfAllSteps(newArray)
           }}
         />
@@ -53,17 +56,11 @@ function App() {
           add = {() => {
             setFormWriting(!formWriting)
           }}
-          delete = {() => {
-            let newArray = [...arrayOfAllSteps]
-              if(newArray.length){
-                const lastTask = newArray.pop()
-                setCurrentDate([parseInt(lastTask.hour.slice(0, 2)), parseInt(lastTask.hour.slice(5))])
-              }
-              setArrayOfAllSteps(newArray)
-          }}
           reset = {() => {
             setCurrentDate(startDate)
             setArrayOfAllSteps([])
+            setStartDate([new Date().getHours(), new Date().getMinutes()])
+            setCurrentDate([new Date().getHours(), new Date().getMinutes()])
           }}
         />
         <Form

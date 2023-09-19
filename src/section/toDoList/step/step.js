@@ -11,10 +11,12 @@ class Step extends React.Component {
             return(
                 <div className="Step">
                     <CheckPoint
+                        key={this.props.color}
                         hour = {this.props.hour + ' - ' + this.props.name}
                         color = {this.props.color}
                         onClick = {this.props.onClick}
                         delete = {this.props.delete}
+                        add = {this.props.add}
                     />
 
                     {makeLineBreak(this.props.text).map(textPart => {
@@ -23,6 +25,7 @@ class Step extends React.Component {
 
                         return(
                             <Task
+                                key={this.props.color}
                                 text = {textPart}
                                 taskStyle = {taskStyle}
                             />
@@ -41,6 +44,7 @@ class Step extends React.Component {
                     color = {this.props.color}
                     onClick = {this.props.onClick}
                     delete = {this.props.delete}
+                    add = {this.props.add}
                 />
                 <div className='pointRail' style={{borderColor: this.props.color}}></div>
             </div>
@@ -84,6 +88,17 @@ class CheckPoint extends React.Component {
                         cursor: 'pointer'
                     }}
                     onClick={this.props.delete}
+                />
+                <img
+                    src={Cross}
+                    alt="Add"
+                    style={{
+                        height: '50%',
+                        padding: '5px',
+                        cursor: 'pointer',
+                        rotate: '45deg'
+                    }}
+                    onClick={(this.props.add)}
                 />
             </div>
         )

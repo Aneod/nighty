@@ -83,7 +83,7 @@ class Input extends React.Component {
         this.state = {
             timeMode: 'Duration',
             replaceMode: 'Replace all',
-            nameValue: this.props.oldData ? this.props.oldData.name == 'Task' ? '' : this.props.oldData.name : '',
+            nameValue: this.props.oldData ? this.props.oldData.name === 'Task' ? '' : this.props.oldData.name : '',
             descriptionValue: this.props.oldData?.text,
             colorValue: this.props.oldData ? this.props.oldData.color : 'black',
             oldDate: this.props.oldData?.hour ? [this.props.oldData?.hour.slice(0, 2), this.props.oldData?.hour.slice(5)] : undefined
@@ -132,6 +132,7 @@ class Input extends React.Component {
                     {['#FF0000', '#FF4000', '#FF8000', '#FFBF00', '#D7DF01', '#31B404', '#04B486', '#01DFD7', '#01A9DB', '#0174DF', '#0101DF', '#5F04B4', '#8904B1', '#B404AE', '#B40486', '#B4045F'].map(color => {
                         return(
                             <ColorCircleChoice
+                                key={color}
                                 color = {color}
                                 colorValue = {this.state.colorValue}
                                 onClick = {(newColor) => {
@@ -193,6 +194,7 @@ class Form extends React.Component {
             return(
                 <div className="Form">
                     <Input
+                        key={'Input'}
                         endTimeTask = {this.props.endTimeTask}
                         oldData = {this.props.oldData}
                         replaceTime = {(startTime, replaceMode) => this.props.replaceTime(startTime, replaceMode)}

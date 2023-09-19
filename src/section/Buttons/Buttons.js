@@ -13,16 +13,6 @@ class ButtonAdd extends React.Component {
     }
 }
 
-class ButtonDelete extends React.Component {
-    render(){
-        return(
-            <div className="ButtonDelete buttonAction" onClick={this.props.onClick}>
-                <div className='plusBarreH'></div>
-            </div>
-        )
-    }
-}
-
 class ButtonReset extends React.Component {
     render(){
         return(
@@ -38,7 +28,6 @@ class Buttons extends React.Component {
         return(
             <div className='buttonsAddReset'>
                 <ButtonAdd onClick = {this.props.add}/>
-                <ButtonDelete onClick = {this.props.delete}/>
                 <ButtonReset onClick = {this.props.reset}/>
             </div>
         )

@@ -36,19 +36,6 @@
     border-radius: 20px;
 }
 
-.ButtonDelete{
-    width: 20%;
-    border-color: blue;
-}
-
-.ButtonDelete .plusBarreH{
-    background-color: blue;
-    width: 18px;
-    height: 5px;
-    position: absolute;
-    border-radius: 20px;
-}
-
 .ButtonReset{
     width: 20%;
     border-radius: 0 10px 10px 0;

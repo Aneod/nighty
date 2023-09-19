@@ -29,12 +29,14 @@ class ToDoList extends React.Component {
                 {this.props.arrayOfAllSteps.map((step, index) => {
                     return(
                         <Step
+                            key={index}
                             hour = {step.hour}
                             color = {step.color}
                             name = {step.name}
                             text = {step.text}
                             onClick = {() => this.props.onClick(index)}
                             delete = {() => this.props.delete(index)}
+                            add = {() => this.props.add(index)}
                         />
                     )
                 })}
